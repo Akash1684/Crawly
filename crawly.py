@@ -60,7 +60,6 @@ def spider(url, word, maxPages):
     # (this is useful for where to go next)
     while numberVisited < maxPages and pagesToVisit != [] and not foundWord:
         numberVisited = numberVisited +1
-        # Start from the beginning of our collection of pages to visit:
         url = pagesToVisit[0]
         pagesToVisit = pagesToVisit[1:]
         try:
@@ -69,10 +68,9 @@ def spider(url, word, maxPages):
             data, links = parser.getLinks(url)
             if data.find(word)>-1:
                 foundWord = True
-                # Add the pages that we visited to the end of our collection
-                # of pages to visit:
                 pagesToVisit = pagesToVisit + links
                 print(" **Success!**")
+                break
         except:
             print(" **Failed!**")
     if foundWord:
