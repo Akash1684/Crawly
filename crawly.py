@@ -79,4 +79,4 @@ def spider(url, word, maxPages):
         print("Word never found")
 
 
-spider("https://en.wikipedia.org/wiki/Narendra_Modi","modi",200)
+spider(BASE_URL,KEYWORD,MAX_PAGES)
