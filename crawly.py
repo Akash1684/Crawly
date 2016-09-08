@@ -12,11 +12,6 @@ class LinkParser(HTMLParser):
         if tag =='a':
             for (key, value) in attrs:
                 if key =='href':
-                    # We are grabbing the new URL. We are also adding the
-                    # base URL to it. For example:
-                    # www.netinstructions.com is the base and
-                    # somepage.html is the new URL (a relative URL)
-                    #
                     # We combine a relative URL with the base URL to create
                     # an absolute URL like:
                     # www.netinstructions.com/somepage.html
@@ -78,5 +73,8 @@ def spider(url, word, maxPages):
     else:
         print("Word never found")
 
+BASE_URL="https://en.wikipedia.org/wiki/Amazon.com"
+KEYWORD="Amazon"
+MAX_PAGES=200
 
 spider(BASE_URL,KEYWORD,MAX_PAGES)
