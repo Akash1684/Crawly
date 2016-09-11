@@ -4,8 +4,6 @@ from urllib import parse
 
 class LinkParser(HTMLParser):
 
-    # This is a function that HTMLParser normally has
-    # but we are adding some functionality to it
     def handle_starttag(self, tag, attrs):
         # We are looking for the begining of a link. Links normally look
         # like <a href="www.someurl.com"></a>
