@@ -39,8 +39,7 @@ class LinkParser(HTMLParser):
         else:
             return "",[]
 
-# And finally here is our spider. It takes in an URL, a word to find,
-# and the number of pages to search through before giving up
+
 def spider(url, word, maxPages):
     pagesToVisit = [url]
     numberVisited = 0
